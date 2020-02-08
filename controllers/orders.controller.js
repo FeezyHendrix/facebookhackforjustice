@@ -31,7 +31,7 @@ exports.createNewRecycler = async (req, res) => {
 
 exports.fetchRecyclers = async (req, res) => {
     try {
-        let recyclers = recyclerModel.findAll();
+        let recyclers = await recyclerModel.findAll();
         return responseHelper.createSuccessResponse(res, 200, recyclers, 'array');
     } catch(e) {
         console.error(e);
